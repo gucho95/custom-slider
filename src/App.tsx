@@ -38,7 +38,7 @@ function App() {
           ]}
         />
         <Filter
-          name="Thumn Color"
+          name="Thumb Color"
           value={classes?.thumb}
           onChange={(value) => setClasses({ ...classes, thumb: value })}
           options={[
