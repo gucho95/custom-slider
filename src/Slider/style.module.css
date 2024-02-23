@@ -1,0 +1,54 @@
+.sliderContainer {
+  @apply w-full py-5 px-6 bg-purple-50 rounded-xl;
+}
+
+.sliderRail {
+  @apply bg-gray-200 h-[20px] relative z-30 transition-all ease-in-out duration-75;
+}
+
+.sliderThumbWrapper {
+  @apply w-px h-px rounded-full absolute top-2 shadow-lg z-10 flex justify-center items-center transition-all ease-in-out duration-75;
+}
+
+.sliderThumb {
+  @apply bg-purple-500 w-8 h-8 rounded-full flex flex-shrink-0 opacity-0;
+  animation: thumb-animation 0.25s ease-in;
+  animation-delay: 0.25s;
+  animation-fill-mode: both;
+}
+
+.sliderTrack {
+  @apply bg-purple-400 absolute inset-0 z-0 opacity-0;
+  animation: track-animation 0.5s ease-in;
+  animation-fill-mode: both;
+}
+
+.sliderBreakpoints {
+  @apply flex justify-between select-none;
+}
+
+.sliderBreakpoint {
+  @apply w-px flex justify-center relative leading-5 pt-3 text-purple-400;
+}
+
+.sliderBreakpoint:before {
+  @apply absolute bottom-10 text-gray-200 h-[3px] z-0 content-['|'];
+}
+
+@keyframes track-animation {
+  from {
+    @apply max-w-0 opacity-50;
+  }
+  to {
+    @apply max-w-full opacity-100;
+  }
+}
+
+@keyframes thumb-animation {
+  from {
+    @apply w-2 h-2 opacity-0;
+  }
+  to {
+    @apply h-8 w-8 opacity-100;
+  }
+}
